@@ -42,7 +42,14 @@ this.state = {
                    <ul className='list-unstyled'>
                     <li key={comment.id}>
                       <p>{comment.comment}</p>
-                      <p>--{comment.author},{comment.date}</p>
+                      <p>--{comment.author},
+                      &nbsp;
+                      {new Intl.DateTimeFormat('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: '2-digit'
+                      }).format(new Date(Date.parse(comment.date)))}
+                      </p>
                     </li>
                    </ul>          
         );
@@ -61,14 +68,15 @@ this.state = {
 
     render() {
      return(
-        <div className='row'>
-            <div className='col-12 col-md-5 m-1'>
-              
+        <div className='container'>
+            <div className='row'>
+              <div className='col-12 col-md-5 m-1'>
               {this.renderDish(this.props.selectedDish)}
-            </div>
-            <div className='col-12 col-md-5 m-1'>
-            {this.renderComments(this.props.selectedDish)}
-            </div>
+              </div>
+                <div className='col-12 col-md-5 m-1'>
+              {this.renderComments(this.props.selectedDish)}
+              </div>
+          </div>
         </div>
      );
   }  
