@@ -43,10 +43,10 @@ class Header extends Component {
         return(
             <>
               <Navbar dark expand="md">
-                    <div className="container">
+                    
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/">
-                    <img src="assets/images/logo.png" height="30" width="41" alt="logo"/>          
+                        <NavbarBrand className="ms-auto" href="/">
+                    <img src="assets/images/logo.png" height="30" width="41" alt="logo" />            
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav navbar>
@@ -76,7 +76,7 @@ class Header extends Component {
                             </NavItem>
                             
                             </Nav>
-                            <Nav className="ml-auto" navbar>
+                            <Nav className="ms-auto" navbar>
                                 <NavItem>
                                     <Button outline onClick={this.toggleModal}>
                                         <span className="fa fa-sign-in fa-lg">Login</span>
@@ -84,7 +84,7 @@ class Header extends Component {
                                 </NavItem>
                             </Nav>
                             </Collapse>
-          </div>
+        
         </Navbar>
         <CustomJumbotron>
             <div className="container">
@@ -96,6 +96,8 @@ class Header extends Component {
                 </div>
             </div>
                 </CustomJumbotron>
+
+
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
